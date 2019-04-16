@@ -20,9 +20,10 @@ readline.question(`Pick a number: `, number => {
     else console.log("Number Must Be Positive!!!");
 
     readline.question(`Pick another number: `, answer => {
-        if (Number(answer) > 0)
-            for (var x = 1; x <= range(1, Number(answer)).length; x++) {
-                if (Number(answer) % x == 0)
+        const n = Number(answer)
+        if (n > 0)
+            for (var x = 1; x < n; x++) {
+                if (n % x == 0)
                     console.log(String(x) + ": is a factor of " + answer);
                 else console.log(String(x) + ": is not a factor of " + answer);
             }
